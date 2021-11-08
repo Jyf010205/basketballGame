@@ -6,6 +6,7 @@ import com.sgzs.nba.card.game.dto.MatchModel;
 import com.sgzs.nba.card.game.dto.Player;
 import com.sgzs.nba.card.game.event.GameStartEvent;
 import com.sgzs.nba.card.game.event.JumpBallEvent;
+import com.sgzs.nba.card.game.service.MatchModelSaveService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ import java.util.HashMap;
 public class GameStartListener implements ApplicationListener<GameStartEvent> {
     @Autowired
     private ApplicationEventPublisher applicationEventPublisher;
+
+    @Autowired
+    private MatchModelSaveService matchModelSaveService;
 
     @Override
     public void onApplicationEvent(GameStartEvent event) {
@@ -91,10 +95,8 @@ public class GameStartListener implements ApplicationListener<GameStartEvent> {
 
         MatchModel matchModel = MatchModelBuilder.build(homeTeam, awayTeam, homePlayers, awayPlayers, onFieldHomePlayerIds, onFieldAwayPlayerIds);
 
-        /**
-         * match塞入redis中
-         * redis.set(match)
-         */
+        // 存放比赛模型
+        matchModelSaveService.save(matchModel);
 
         log.info("matchId:{} 比赛准备就绪,开始!",matchModel.getMatchId());
         // 开始跳球事件

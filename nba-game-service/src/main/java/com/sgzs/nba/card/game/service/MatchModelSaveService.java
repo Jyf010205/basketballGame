@@ -47,7 +47,7 @@ public class MatchModelSaveService {
 
         MatchModelMemorySaveResponse memorySaveResponse = matchModelMemorySaveService.get(matchId);
         if (memorySaveResponse.isSuccess()){
-            return redisSaveResponse.getMatchModel();
+            return memorySaveResponse.getMatchModel();
         }
         log.error("match:{},比赛不存在",matchId);
         return null;

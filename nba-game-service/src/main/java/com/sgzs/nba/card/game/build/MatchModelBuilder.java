@@ -21,6 +21,12 @@ public class MatchModelBuilder {
         matchModel.setMatchId(snowflake.nextId());
         matchModel.setHomeTeam(homeTeam);
         matchModel.setAwayTeam(awayTeam);
+        homePlayers.values().forEach(player -> {
+            player.setMatchStatistics(MatchStatisticsBuilder.build());
+        });
+        awayPlayers.values().forEach(player -> {
+            player.setMatchStatistics(MatchStatisticsBuilder.build());
+        });
         matchModel.setHomePlayers(homePlayers);
         matchModel.setAwayPlayers(awayPlayers);
         matchModel.setOnFieldHomePlayerIds(onFieldHomePlayerIds);

@@ -1,7 +1,6 @@
 package com.sgzs.nba.card.game.dto;
 
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,6 +11,9 @@ import java.util.List;
  */
 @Data
 @ToString
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Player {
 
     /**
@@ -57,7 +59,10 @@ public class Player {
 
     @Data
     @ToString
-    class PlayerPower{
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class PlayerPower{
 
         /**
          * 球员体力

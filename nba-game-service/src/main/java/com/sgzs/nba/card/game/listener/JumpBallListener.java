@@ -1,7 +1,10 @@
 package com.sgzs.nba.card.game.listener;
 
+import com.sgzs.nba.card.game.dto.MatchModel;
 import com.sgzs.nba.card.game.event.JumpBallEvent;
+import com.sgzs.nba.card.game.service.MatchModelSaveService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
@@ -13,9 +16,12 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class JumpBallListener implements ApplicationListener<JumpBallEvent> {
+    @Autowired
+    private MatchModelSaveService matchModelSaveService;
 
     @Override
     public void onApplicationEvent(JumpBallEvent event) {
-        System.out.println(event.getMatchId());
+        MatchModel matchModel = matchModelSaveService.get(event.getMatchId());
+        System.out.println(matchModel);
     }
 }

@@ -56,6 +56,11 @@ public class MatchModel {
     private Integer hasBall;
 
     /**
+     * 持球人Id
+     */
+    private Long hasBallPlayerId;
+
+    /**
      * 主场数据统计
      */
     private MatchStatistics homeWatchStatistics;

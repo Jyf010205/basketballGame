@@ -67,57 +67,57 @@ public class Player {
         /**
          * 球员体力
          */
-        private Integer stamina;
+        private int stamina;
 
         /**
          * 两分球能力
          */
-        private Integer attackTwoPoint;
+        private int attackTwoPoint;
 
         /**
          * 三分球能力
          */
-        private Integer attackThreePoint;
+        private int attackThreePoint;
 
         /**
          * 上篮能力
          */
-        private Integer attackLayUp;
+        private int attackLayUp;
 
         /**
          * 罚球能力
          */
-        private Integer attackFreeThrow;
+        private int attackFreeThrow;
 
         /**
          * 传球能力
          */
-        private Integer attackPass;
+        private int attackPass;
 
         /**
          * 进攻篮板
          */
-        private Integer attackOffensiveRebound;
+        private int attackOffensiveRebound;
 
         /**
          * 投篮干扰能力
          */
-        private Integer defenceOnBall;
+        private int defenceOnBall;
 
         /**
          * 抢断能力
          */
-        private Integer defenceSteal;
+        private int defenceSteal;
 
         /**
          * 盖帽能力
          */
-        private Integer defenceBlock;
+        private int defenceBlock;
 
         /**
          * 防守篮板能力
          */
-        private Integer defenceDefensiveRebound;
+        private int defenceDefensiveRebound;
     }
 
 }

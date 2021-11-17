@@ -21,7 +21,7 @@ public class JumpBallService {
         int awayPlayerBlock = awayPlayer.getPlayerPower().getDefenceBlock();
 
         if (homePlayerBlock == awayPlayerBlock){
-            double randomDouble = RandomUtil.randomDouble(1.0, -1.0);
+            double randomDouble = RandomUtil.randomDouble(-1.0, 1.0);
 
             return JumpBallResponse.of(randomDouble > 0 ? HasBallEnum.HOME.getCode() : HasBallEnum.AWAY.getCode());
         }else {

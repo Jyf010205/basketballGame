@@ -27,24 +27,14 @@ public class Player {
     private String playerName;
 
     /**
-     * 球员号码
+     * 场上位置
      */
-    private String playerNumber;
+    private Integer onFieldPosition;
 
     /**
-     * 球员身高
+     * 球员基础能力
      */
-    private String playerHeight;
-
-    /**
-     * 球员体重
-     */
-    private String playerWeight;
-
-    /**
-     * 比赛可打位置
-     */
-    private List<Integer> canPosition;
+    private PlayerStaticData playerStaticData;
 
     /**
      * 球员能力
@@ -56,6 +46,34 @@ public class Player {
      */
     private MatchStatistics matchStatistics;
 
+
+    @Data
+    @ToString
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class PlayerStaticData{
+
+        /**
+         * 球员号码
+         */
+        private String playerNumber;
+
+        /**
+         * 球员身高
+         */
+        private String playerHeight;
+
+        /**
+         * 球员体重
+         */
+        private String playerWeight;
+
+        /**
+         * 比赛可打位置
+         */
+        private List<Integer> canPosition;
+    }
 
     @Data
     @ToString

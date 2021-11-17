@@ -64,32 +64,32 @@ public class GameStartListener implements ApplicationListener<GameStartEvent> {
             return;
         }
 
-        if (!homePlayers.get(onFieldHomePlayerIds[0]).getCanPosition().contains(PlayerPositionEnum.PG.getPositionId()) &&
-                !awayPlayers.get(onFieldAwayPlayerIds[0]).getCanPosition().contains(PlayerPositionEnum.PG.getPositionId())){
+        if (!homePlayers.get(onFieldHomePlayerIds[0]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.PG.getPositionId()) &&
+                !awayPlayers.get(onFieldAwayPlayerIds[0]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.PG.getPositionId())){
             log.error("首发控卫球员可打位置中没有控卫,homePlayer:{},awayPlayer:{}",homePlayers.get(onFieldHomePlayerIds[0]),awayPlayers.get(onFieldAwayPlayerIds[0]));
             return;
         }
 
-        if (!homePlayers.get(onFieldHomePlayerIds[1]).getCanPosition().contains(PlayerPositionEnum.SG.getPositionId()) &&
-                !awayPlayers.get(onFieldAwayPlayerIds[1]).getCanPosition().contains(PlayerPositionEnum.SG.getPositionId())){
+        if (!homePlayers.get(onFieldHomePlayerIds[1]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.SG.getPositionId()) &&
+                !awayPlayers.get(onFieldAwayPlayerIds[1]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.SG.getPositionId())){
             log.error("首发得分后卫球员可打位置中没有得分后卫,homePlayer:{},awayPlayer:{}",homePlayers.get(onFieldHomePlayerIds[1]),awayPlayers.get(onFieldAwayPlayerIds[1]));
             return;
         }
 
-        if (!homePlayers.get(onFieldHomePlayerIds[2]).getCanPosition().contains(PlayerPositionEnum.SF.getPositionId()) &&
-                !awayPlayers.get(onFieldAwayPlayerIds[2]).getCanPosition().contains(PlayerPositionEnum.SF.getPositionId())){
+        if (!homePlayers.get(onFieldHomePlayerIds[2]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.SF.getPositionId()) &&
+                !awayPlayers.get(onFieldAwayPlayerIds[2]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.SF.getPositionId())){
             log.error("首发小前锋球员可打位置中没有小前锋,homePlayer:{},awayPlayer:{}",homePlayers.get(onFieldHomePlayerIds[2]),awayPlayers.get(onFieldAwayPlayerIds[2]));
             return;
         }
 
-        if (!homePlayers.get(onFieldHomePlayerIds[3]).getCanPosition().contains(PlayerPositionEnum.PF.getPositionId()) &&
-                !awayPlayers.get(onFieldAwayPlayerIds[3]).getCanPosition().contains(PlayerPositionEnum.PF.getPositionId())){
+        if (!homePlayers.get(onFieldHomePlayerIds[3]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.PF.getPositionId()) &&
+                !awayPlayers.get(onFieldAwayPlayerIds[3]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.PF.getPositionId())){
             log.error("首发大前锋球员可打位置中没有大前锋,homePlayer:{},awayPlayer:{}",homePlayers.get(onFieldHomePlayerIds[3]),awayPlayers.get(onFieldAwayPlayerIds[3]));
             return;
         }
 
-        if (!homePlayers.get(onFieldHomePlayerIds[4]).getCanPosition().contains(PlayerPositionEnum.C.getPositionId()) &&
-                !awayPlayers.get(onFieldAwayPlayerIds[4]).getCanPosition().contains(PlayerPositionEnum.C.getPositionId())){
+        if (!homePlayers.get(onFieldHomePlayerIds[4]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.C.getPositionId()) &&
+                !awayPlayers.get(onFieldAwayPlayerIds[4]).getPlayerStaticData().getCanPosition().contains(PlayerPositionEnum.C.getPositionId())){
             log.error("首发中锋球员可打位置中没有中锋,homePlayer:{},awayPlayer:{}",homePlayers.get(onFieldHomePlayerIds[4]),awayPlayers.get(onFieldAwayPlayerIds[4]));
             return;
         }

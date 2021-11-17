@@ -31,6 +31,11 @@ public class MatchModelBuilder {
         matchModel.setAwayPlayers(awayPlayers);
         matchModel.setOnFieldHomePlayerIds(onFieldHomePlayerIds);
         matchModel.setOnFieldAwayPlayerIds(onFieldAwayPlayerIds);
+
+        for (int i = 0; i < 5; i++) {
+            homePlayers.get(onFieldHomePlayerIds[i]).setOnFieldPosition(i);
+            awayPlayers.get(onFieldAwayPlayerIds[i]).setOnFieldPosition(i);
+        }
         matchModel.setHomeWatchStatistics(MatchStatisticsBuilder.build());
         matchModel.setAwayWatchStatistics(MatchStatisticsBuilder.build());
         matchModel.setQuarter(1);

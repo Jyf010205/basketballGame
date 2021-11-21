@@ -18,10 +18,8 @@ import java.util.HashMap;
 public class GetBallAfterJumpBallService {
 
     public GetBallAfterJumpBallResponse getBallAfterJumpBall(HashMap<Long, Player> players,Long[] onFieldPlayerIds){
-
         // 由控卫控制球
         return GetBallAfterJumpBallResponse.of(onFieldPlayerIds[PlayerPositionEnum.PG.getPositionId()]);
-
     }
 
 }

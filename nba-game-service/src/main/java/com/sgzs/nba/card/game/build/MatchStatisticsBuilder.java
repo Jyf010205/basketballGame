@@ -2,6 +2,8 @@ package com.sgzs.nba.card.game.build;
 
 import com.sgzs.nba.card.game.dto.MatchStatistics;
 
+import java.time.LocalTime;
+
 /**
  * @author: jianyufeng
  * @date: 2021/11/7 23:34
@@ -12,6 +14,7 @@ public class MatchStatisticsBuilder {
     public static MatchStatistics build(){
 
         MatchStatistics matchStatistics = new MatchStatistics();
+        matchStatistics.setMinutesPlayed(LocalTime.MIN);
         matchStatistics.setPoints(0);
         matchStatistics.setOffensiveRebounds(0);
         matchStatistics.setDefensiveRebounds(0);

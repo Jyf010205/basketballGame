@@ -24,6 +24,7 @@ public class JumpBallService {
             double randomDouble = RandomUtil.randomDouble(-1.0, 1.0);
 
             return JumpBallResponse.of(randomDouble > 0 ? HasBallEnum.HOME.getCode() : HasBallEnum.AWAY.getCode());
+            // 后场篮板能力决定跳球球权
         }else {
             return JumpBallResponse.of(homePlayerBlock > awayPlayerBlock ? HasBallEnum.HOME.getCode() : HasBallEnum.AWAY.getCode());
         }

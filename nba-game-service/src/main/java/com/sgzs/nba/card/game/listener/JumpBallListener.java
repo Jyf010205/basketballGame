@@ -46,25 +46,25 @@ public class JumpBallListener implements ApplicationListener<JumpBallEvent> {
 
         // 判断谁跳球胜利
         JumpBallResponse jumpBallResponse = jumpBallService.jumpBall(homePlayer, awayPlayer);
-        log.info("{}队获得球权",HasBallEnum.codeOf(jumpBallResponse.getHasBall()));
+        log.info("{}队获得球权", HasBallEnum.codeOf(jumpBallResponse.getHasBall()));
 
         GetBallAfterJumpBallResponse getBallAfterJumpBallResponse;
-        Long hasBallPlayerId;
+        Long hasBallPlayerId = null;
 
         // 判断队内谁控球
-        if (HasBallEnum.HOME.getCode().equals(jumpBallResponse.getHasBall())){
+        if (HasBallEnum.HOME.getCode().equals(jumpBallResponse.getHasBall())) {
             getBallAfterJumpBallResponse = getBallAfterJumpBallService.getBallAfterJumpBall(matchModel.getHomePlayers(), matchModel.getOnFieldHomePlayerIds());
             hasBallPlayerId = getBallAfterJumpBallResponse.getHasBallPlayerId();
 
             // 如果持球者的id不在场上 控球者为控卫
-            if (!Arrays.asList(matchModel.getOnFieldHomePlayerIds()).contains(hasBallPlayerId)){
+            if (!Arrays.asList(matchModel.getOnFieldHomePlayerIds()).contains(hasBallPlayerId)) {
                 hasBallPlayerId = matchModel.getOnFieldHomePlayerIds()[PlayerPositionEnum.PG.getPositionId()];
             }
-        }else {
+        } else if (HasBallEnum.AWAY.getCode().equals(jumpBallResponse.getHasBall())) {
             getBallAfterJumpBallResponse = getBallAfterJumpBallService.getBallAfterJumpBall(matchModel.getAwayPlayers(), matchModel.getOnFieldAwayPlayerIds());
             hasBallPlayerId = getBallAfterJumpBallResponse.getHasBallPlayerId();
 
-            if (!Arrays.asList(matchModel.getOnFieldAwayPlayerIds()).contains(hasBallPlayerId)){
+            if (!Arrays.asList(matchModel.getOnFieldAwayPlayerIds()).contains(hasBallPlayerId)) {
                 hasBallPlayerId = matchModel.getOnFieldAwayPlayerIds()[PlayerPositionEnum.PG.getPositionId()];
             }
         }
@@ -75,6 +75,6 @@ public class JumpBallListener implements ApplicationListener<JumpBallEvent> {
 
         matchModelSaveService.save(matchModel);
 
-        applicationEventPublisher.publishEvent(new DribbleEvent(this,matchModel.getMatchId()));
+        applicationEventPublisher.publishEvent(new DribbleEvent(this, matchModel.getMatchId()));
     }
 }

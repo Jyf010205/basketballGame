@@ -16,10 +16,8 @@ public class GetBallAfterJumpBallResponse {
     private Long hasBallPlayerId;
 
     public static GetBallAfterJumpBallResponse of(Long hasBallPlayerId){
-
         GetBallAfterJumpBallResponse response = new GetBallAfterJumpBallResponse();
         response.setHasBallPlayerId(hasBallPlayerId);
         return response;
-
     }
 }

@@ -32,7 +32,7 @@ public class Player {
     private Integer onFieldPosition;
 
     /**
-     * 球员基础能力
+     * 球员基础数据
      */
     private PlayerStaticData playerStaticData;
 
@@ -88,6 +88,11 @@ public class Player {
         private int stamina;
 
         /**
+         * 突破能力
+         */
+        private int attackDribbleBreak;
+
+        /**
          * 两分球能力
          */
         private int attackTwoPoint;
@@ -118,7 +123,7 @@ public class Player {
         private int attackOffensiveRebound;
 
         /**
-         * 投篮干扰能力
+         * 防守持球能力
          */
         private int defenceOnBall;
 
